@@ -19,6 +19,31 @@ canvas {
     touch-action: manipulation; /* Prevent double-tap zoom */
 }
 
+#header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px; /* Match the width of the canvas */
+    height: 50px; /* Set header height */
+    background-color: black; /* Black background for the header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in the width */
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
+#scoreDisplay, #highScoreDisplay {
+    font-size: 18px; /* Adjust font size */
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background for scores */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 #touchControls {
     position: absolute;
     bottom: 70px; /* Position the buttons above the bottom */
@@ -66,28 +91,4 @@ button {
 
 #jumpBtn {
     margin-left: 10px; /* Adjust jump button's distance from the right button group */
-}
-
-#scoreDisplay {
-    position: absolute;
-    top: 0px;
-    left: 20%;
-    transform: translateX(-50%);
-    font-size: 15px;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 15px;
-    border-radius: 5px;
-}
-
-#highScoreDisplay {
-    position: absolute;
-    top: 0px;
-    left: 75%;
-    transform: translateX(-50%);
-    font-size: 13px;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 15px;
-    border-radius: 5px;
 }
