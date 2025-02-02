@@ -14,7 +14,7 @@ canvas {
 
 #touchControls {
     position: absolute;
-    bottom: 10px;
+    bottom: 50px; /* Move buttons up */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -28,6 +28,11 @@ button {
     background: #444;
     color: white;
     cursor: pointer;
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -webkit-tap-highlight-color: transparent; /* Disable tap highlight on iOS */
 }
 
 #scoreDisplay {
