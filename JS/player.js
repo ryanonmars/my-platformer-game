@@ -4,7 +4,7 @@ class Player {
         this.height = 30;
         this.x = canvas.width / 2 - this.width / 2;
         this.y = canvas.height - 30 - this.height; // Position in the canvas
-        this.worldY = this.y; // ✅ Track actual height in the game world
+        this.worldY = this.y; // Track actual height in the game world
         this.dy = 0;
         this.dx = 0;
         this.gravity = 0.1;
@@ -18,7 +18,7 @@ class Player {
     update(platforms) {
         this.dy += this.gravity;
         this.y += this.dy;
-        this.worldY += this.dy; // ✅ Now updates every frame
+        this.worldY += this.dy; // Update worldY every frame
         this.x += this.dx;
 
         let onPlatform = false;
@@ -33,15 +33,15 @@ class Player {
                 this.x + this.width > platform.x &&
                 this.x < platform.x + platform.width
             ) {
-                this.dy = 0;
-                this.y = platform.y - this.height; // ✅ Correctly place player on top
-                this.worldY = this.y; // ✅ Update worldY when landing
+                this.dy = platform.isDropping ? 1 : 0; // Handle dropping platforms correctly
+                this.y = platform.y - this.height; // Correctly place player on top
+                this.worldY = this.y; // Update worldY when landing
                 onPlatform = true;
                 this.canDoubleJump = true;
 
                 // ✅ IF PLATFORM IS MOVING, MOVE PLAYER WITH IT
                 if (platform.isMoving) {
-                    platformSpeed = platform.dx;
+                    platformSpeed = platform.speed * platform.direction;
                 }
             }
 
@@ -53,8 +53,8 @@ class Player {
                 this.x + this.width > platform.x &&
                 this.x < platform.x + platform.width
             ) {
-                this.dy = 0; // ✅ Stop upward movement
-                this.y = platform.y + platform.height; // ✅ Push player back down
+                this.dy = 0; // Stop upward movement
+                this.y = platform.y + platform.height; // Push player back down
             }
         });
 
