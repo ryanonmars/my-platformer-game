@@ -21,19 +21,31 @@ canvas {
 
 #touchControls {
     position: absolute;
-    bottom: 50px; /* Move buttons slightly up */
+    bottom: 70px; /* Position the buttons above the bottom */
     width: 100%;
     display: flex;
+    justify-content: center; /* Center the entire group */
+    align-items: center;
+    gap: 100px; /* Control spacing between the groups */
+    padding: 0 60px; /* Adjust overall spacing closer to the center */
+}
+
+#moveControls {
+    display: flex; /* Group the left and right buttons */
+    gap: 10px; /* Control spacing between left and right buttons */
+}
+
+#jumpControl {
+    display: flex; /* Ensure jump button is treated as a separate flex item */
     justify-content: center;
-    gap: 10px;
 }
 
 button {
     font-size: 20px;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border: none;
     background: #444;
-    color: white;
+    color: greenyellow;
     cursor: pointer;
     user-select: none; /* Disable text selection */
     -webkit-user-select: none; /* Safari */
@@ -44,12 +56,36 @@ button {
     border-radius: 5px; /* Optional: Round button corners */
 }
 
+#leftBtn {
+    margin-right: 5px; /* Fine-tune spacing */
+}
+
+#rightBtn {
+    margin-left: 5px; /* Fine-tune spacing */
+}
+
+#jumpBtn {
+    margin-left: 10px; /* Adjust jump button's distance from the right button group */
+}
+
 #scoreDisplay {
     position: absolute;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 24px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+#highScoreDisplay {
+    position: absolute;
+    bottom: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
     color: white;
     background: rgba(0, 0, 0, 0.5);
     padding: 5px 15px;
