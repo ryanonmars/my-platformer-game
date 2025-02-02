@@ -70,10 +70,10 @@ button {
 
 #scoreDisplay {
     position: absolute;
-    top: 10px;
-    left: 50%;
+    top: 0px;
+    left: 20%;
     transform: translateX(-50%);
-    font-size: 24px;
+    font-size: 15px;
     color: white;
     background: rgba(0, 0, 0, 0.5);
     padding: 5px 15px;
@@ -82,10 +82,10 @@ button {
 
 #highScoreDisplay {
     position: absolute;
-    bottom: 130px;
-    left: 50%;
+    top: 0px;
+    left: 75%;
     transform: translateX(-50%);
-    font-size: 15px;
+    font-size: 13px;
     color: white;
     background: rgba(0, 0, 0, 0.5);
     padding: 5px 15px;
