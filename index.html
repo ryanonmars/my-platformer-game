@@ -11,17 +11,23 @@
 <div id="scoreDisplay">Score: 0</div>
 <canvas id="gameCanvas"></canvas>
 
-<!-- Touch Controls -->
+<div id="highScoreDisplay">High Score: 0</div> <!-- New high score display -->
+
 <div id="touchControls">
-    <button id="leftBtn">Left</button>
-    <button id="rightBtn">Right</button>
-    <button id="jumpBtn">Jump</button>
+    <div id="moveControls">
+        <button id="leftBtn">Left</button>
+        <button id="rightBtn">Right</button>
+    </div>
+    <div id="jumpControl">
+        <button id="jumpBtn">Jump</button>
+    </div>
 </div>
 
 <script src="./JS/utils.js"></script>
 <script src="./JS/player.js"></script>
 <script src="./JS/platform.js"></script>
 <script src="./JS/controls.js"></script>
+<script src="./JS/scoreManager.js"></script> <!-- Add this before game.js -->
 <script src="./JS/game.js"></script>
 <script src="./JS/script.js"></script>
 
