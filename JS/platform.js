@@ -45,7 +45,7 @@ function generatePlatforms(count, canvasHeight) {
     let platforms = [];
 
     // Create a solid ground platform at the bottom
-    let groundPlatform = new Platform(0, canvasHeight - 30, canvas.width, 30, false);
+    let groundPlatform = new Platform(0, canvasHeight - 30, canvas.width, 30, false, false);
     platforms.push(groundPlatform);
 
     for (let i = 1; i < count; i++) {
@@ -54,8 +54,8 @@ function generatePlatforms(count, canvasHeight) {
         let y = canvasHeight - (i * 100); // Space out platforms
 
         // Make isDropping and isMoving mutually exclusive
-        let isDropping = Math.random() < 0.1; // % chance to be a dropping platform
-        let isMoving = !isDropping && Math.random() < 0.5; // % chance to be a moving platform, only if not dropping
+        let isDropping = Math.random() < 0.2; // 5% chance to be a dropping platform
+        let isMoving = !isDropping && Math.random() < 0.5; // 50% chance to be a moving platform, only if not dropping
 
         platforms.push(new Platform(x, y, width, 10, isMoving, isDropping));
     }
