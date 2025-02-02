@@ -1,6 +1,4 @@
-const canvas = document.getElementById("gameCanvas");
-
-// Prevent long-press contextual menu on the canvas
+// Prevent the long-press contextual menu on the canvas
 canvas.addEventListener("contextmenu", (e) => {
     e.preventDefault();
 });
@@ -17,7 +15,7 @@ document.addEventListener("gesturestart", (e) => {
     e.preventDefault();
 });
 
-// Optionally: Prevent long-press contextual menu on the entire document
+// Optionally: Prevent the context menu on the entire document
 document.addEventListener("contextmenu", (e) => {
     e.preventDefault();
 });
